@@ -1,0 +1,664 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="cache-Control" content="co-cache" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+
+<title>이삭플랫폼</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?v=20191217">
+<link rel="stylesheet" href="/css/layout.css?v=20230208">
+<link rel="stylesheet" href="/css/mquery.css?v=20210216">
+
+<link rel="stylesheet" href="/lib/pretty-checkbox/pretty-checkbox.min.css" />
+<link rel="stylesheet" href="/lib/toastr/toastr.css" />
+<link rel="stylesheet" href="/lib/waitMe/waitMe.min.css" />
+<!-- Slidebars CSS -->
+<link rel="stylesheet" href="/css/slidebars.css">
+<link rel="stylesheet" href="/css/custom.css?v=20230208">
+<link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/static/custom.css?v=20230208">
+<script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+
+  <!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+  
+</head>
+<body>
+  <div id="sb-site">
+      <div class="header_wrap">
+  <div class="header_inner">
+    <h1 class="logo"><a href="/">NaRDA</a></h1>
+    <div id="top_nav_wrap" class="menu5" >
+      <ul id="gnb">
+                <li class='menu '>
+          <a href="/about/esac" class="nav_menu_a">소개</a>
+          <div class="sub_menu">
+            <ul class="nav_sub_icon01">
+                                          <li><a href="/about/esac" >ESAC</a></li>
+                                          <li><a href="/about/manual" >이용안내</a></li>
+                                          <li><a href="/info/notice" >공지사항</a></li>
+                          </ul>
+          </div>
+        </li>
+                <li class='menu on'>
+          <a href="/search/" class="nav_menu_a">연구데이터</a>
+          <div class="sub_menu">
+            <ul class="nav_sub_icon01">
+                                          <li><a href="/search/" >검색</a></li>
+                                          <li><a href="/datamap/" >데이터맵</a></li>
+                                          <li><a href="/data/draft/" >제출</a></li>
+                          </ul>
+          </div>
+        </li>
+                <li class='menu '>
+          <a href="/about/dmp" class="nav_menu_a">DMP</a>
+          <div class="sub_menu">
+            <ul class="nav_sub_icon01">
+                                          <li><a href="/about/dmp" >DMP소개</a></li>
+                                          <li><a href="/dmp/" >검색</a></li>
+                                          <li><a href="/dmp/draft/" >작성</a></li>
+                          </ul>
+          </div>
+        </li>
+                <li class='menu '>
+          <a href="/my/data/" class="nav_menu_a">MyData</a>
+          <div class="sub_menu">
+            <ul class="nav_sub_icon01">
+                                          <li><a href="/my/data/" >내 데이터</a></li>
+                                          <li><a href="/my/dmp/" >내 DMP</a></li>
+                                          <li><a href="/my/collection/" >내 컬렉션</a></li>
+                                          <li><a href="/my/storage/" >내 저장소</a></li>
+                                          <li><a href="/my/share/requests/" >활용 신청</a></li>
+                                          <li><a href="/my/api/requests/" >OpenAPI 신청</a></li>
+                          </ul>
+          </div>
+        </li>
+                <li class='menu '>
+          <a href="/data/workflow/" class="nav_menu_a">검토/승인</a>
+          <div class="sub_menu">
+            <ul class="nav_sub_icon01">
+                                          <li><a href="/data/workflow/" >연구데이터 승인</a></li>
+                                          <li><a href="/data/review/" >연구데이터 검토</a></li>
+                                          <li><a href="/dmp/workflow/" >DMP 승인</a></li>
+                                          <li><a href="/dmp/review/" >DMP 검토</a></li>
+                          </ul>
+          </div>
+        </li>
+              </ul>
+    </div>
+
+    <div class="gnb_bg">
+      <div class="bg_wrap">
+        
+              </div>
+    </div>
+
+    <div class="top_right_box">
+      <div class="search_bt_box">
+        <a href="#" class="sub_search_bt">search</a>
+        <div class="mobile_s_inner">
+          <form class="ms_box" action="/search/">
+            <div class="ms_inner">
+              <input type="text" name="q" title="검색" placeholder="검색어를 입력해주세요.">
+            </div>
+          </form>
+          <input type="button" class="sub_search_bt" value="close">
+        </div>
+      </div><!--search_bt_box : e  -->
+      <div class="header_login_col">
+        
+                <a href="/auth/login" class="header_login_bt"><span>로그인</span></a>
+              </div>
+      <div class="tablet_nav sb-toggle-right">
+        <a href="#" class="tablet_nav_bt" id="mnav_bt">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </a>
+      </div>
+    </div><!-- top_right_box : e  -->
+
+  </div>
+  <div class="gnb_back_bg">nav bg</div>
+</div><!-- header_wrap -->
+    
+      <div class="visual_box">
+  <div class="vb_inner">
+        <h3>연구데이터 > <a href="/search/">검색</a></h3>
+        <div class="vb_tab">
+      <ul>
+              </ul>
+    </div>
+  </div>
+</div>
+  
+    
+  <div class="contents_wrap">
+    <div class="result_list_wrap">
+      <div class="item_option">
+        <div class="result_option">
+          <form action="/search/" method="get" name="search_form">
+            <span class="sel_span">
+              <select name="type">
+                                              <option value="*" >전체</option>
+                                              <option value="title" >제목</option>
+                                              <option value="description" >설명</option>
+                                              <option value="contributor" >저자</option>
+                            </select>
+            </span>
+            <div class="result_search">
+              <input type="text" class="r_s_int" title="검색" name="q" value=""/>
+              <button type="submit" class="r_s_bt">검색</button>
+            </div>
+            <a href="/advanced-search/" class="ads_btn">상세 검색</a>
+          </form>
+        </div>
+      </div><!-- item_option : e -->
+      <div class="result_contents">
+        <div class="list_top_box">
+  <div class="page_text">총 <strong>53</strong>건의 데이터가 있습니다.</div>
+  <div class="list_sort_box">
+    <ul>
+            <li><a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;filter=file.extension:pdf&amp;sort=title,asc">제목</a></li>
+                  <li><a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;filter=file.extension:pdf&amp;sort=date,desc" class="asc_on">승인일</a></li>
+          </ul>
+  </div>
+</div>
+        <div class="row_list">
+  <ul>
+            <li>
+  <em class="list_num">1</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/670ba823-7690-419a-9c0a-86cd64e09b67">
+                        Imploring GE-Filters of GE-Algebras          </a>
+                            
+    <span>
+          <a href="/collection/f75445ee-a8a8-47c5-a8ea-4b8390debf50" class="collection-title">서로 다른 행렬 공간상의 퍼지 항 계수와 그 보존자 연구(2019-2020)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2021_Song et al_J Mathematics.PDF]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">2</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/77c49246-2c43-4e92-a1c4-0cf11510cf8e">
+                        Inf-Hesitant Fuzzy Ideals in BCK/BCI-Algebras          </a>
+                            
+    <span>
+          <a href="/collection/f75445ee-a8a8-47c5-a8ea-4b8390debf50" class="collection-title">서로 다른 행렬 공간상의 퍼지 항 계수와 그 보존자 연구(2019-2020)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2020_Jun &amp; Song_Bulletin of the section of logic.pdf]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">3</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/9b6dfe22-6678-46fb-bbf8-ecfdde6c43ba">
+                        Linear Maps that Preserve Any Two Term Ranks on Matrix Spaces over Anti-Negative Semirings          </a>
+                            
+    <span>
+          <a href="/collection/f75445ee-a8a8-47c5-a8ea-4b8390debf50" class="collection-title">서로 다른 행렬 공간상의 퍼지 항 계수와 그 보존자 연구(2019-2020)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2020_Kang et al_Mathematics.pdf]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">4</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/92104a20-289d-4373-8c0d-a2d605cf3cb5">
+                        Hybrid Ideals of BCK/BCI-Algebras          </a>
+                            
+    <span>
+          <a href="/collection/f75445ee-a8a8-47c5-a8ea-4b8390debf50" class="collection-title">서로 다른 행렬 공간상의 퍼지 항 계수와 그 보존자 연구(2019-2020)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2020_Kang et al_Axioms.pdf]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">5</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/3706f9f5-a60f-4e50-b6bc-3535e47f1b6b">
+                        Foldness of Bipolar Fuzzy Sets and Its Application in BCK/BCI-Algebras          </a>
+                            
+    <span>
+          <a href="/collection/f75445ee-a8a8-47c5-a8ea-4b8390debf50" class="collection-title">서로 다른 행렬 공간상의 퍼지 항 계수와 그 보존자 연구(2019-2020)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2019_Jun &amp; Song_Mathematics.pdf]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">6</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/1b9129ca-d4c1-49b4-9f6e-e4b0c84aab35">
+                        Growth and Photoacclimation Strategies of Three Zostera Species Along a Vertical Gradient: Implications for Seagrass Zonation Patterns          </a>
+                            
+    <span>
+          <a href="/collection/fdc62d9d-e872-42d3-8283-13f04b85c129" class="collection-title">제주도 해양생태보호구역인 토끼섬 해역 내 자생하는 잘피, 거머리말 생육지의 현황 및 생태계서비스 평가(2019-2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2021_Park et al_Frontiers Mar Sci.PDF]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">7</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/5729d6ce-092d-4aa4-8116-32f12cafec34">
+                        In Situ Measurement of Sound Attenuation by Fish Schools (Japanese Horse Mackerel, Trachurus japonicus) at Mid-Frequency Bands          </a>
+                            
+    <span>
+          <a href="/collection/161ee125-270e-437b-a19f-1eaa99625746" class="collection-title">제주 남방큰돌고래 주요 발견지역에서 수중음향 모니터링(2019-2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2021_Kim &amp; Paeng_Applied Sciences.pdf]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">8</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/1051724b-42a2-40e8-91e4-cf2b6b1e5fa2">
+                        Numerical simulation of spatiotemporal red blood cell aggregation under sinusoidal pulsatile flow          </a>
+                            
+    <span>
+          <a href="/collection/161ee125-270e-437b-a19f-1eaa99625746" class="collection-title">제주 남방큰돌고래 주요 발견지역에서 수중음향 모니터링(2019-2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2021_Lee &amp; Paeng_Sci Rep.pdf]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">9</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/71c7deda-c811-43e1-9c95-ea6c0ba5fe67">
+                        제주 연해 수중 주변소음 계류 측정과 환경 변화에 따른 분석          </a>
+                            
+    <span>
+          <a href="/collection/161ee125-270e-437b-a19f-1eaa99625746" class="collection-title">제주 남방큰돌고래 주요 발견지역에서 수중음향 모니터링(2019-2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2020_정인용 등_한국음향학회지.pdf]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">10</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/16853dcf-f495-4a02-be44-3466bc752940">
+                        조하대 인공기질에 이식된 감태(Ecklonia cava )와 큰열매모자반(Sargassum macrocarpum )의 생존률과 생장          </a>
+                            
+    <span>
+          <a href="/collection/dd15a74b-a62a-45c2-8cd3-b972117b3c79" class="collection-title">제주 해조류 생물권 보전 전략수립을 위한 생태환경 장기모니터링 및 통합DB 구축(2019-2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2021_강정찬 등_수생생물.PDF]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">11</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/39a1c0bd-1466-4a08-a558-167cdb176f00">
+                        Transfer of the monospecific genus Nienburgella (Delesseriaceae, Rhodophyta) to Phycodrys, based on morphological and molecular evidence          </a>
+                            
+    <span>
+          <a href="/collection/dd15a74b-a62a-45c2-8cd3-b972117b3c79" class="collection-title">제주 해조류 생물권 보전 전략수립을 위한 생태환경 장기모니터링 및 통합DB 구축(2019-2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2021_Kang et al_Phytotaxa.PDF]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">12</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/9a53c0b2-3976-446c-bff3-fac3cf408934">
+                        Taxonomic Revision of Hook-Forming Acrosorium (Delesseriaceae, Rhodophyta) from the Northwestern Pacific Based on Morphology and Molecular Data          </a>
+                            
+    <span>
+          <a href="/collection/dd15a74b-a62a-45c2-8cd3-b972117b3c79" class="collection-title">제주 해조류 생물권 보전 전략수립을 위한 생태환경 장기모니터링 및 통합DB 구축(2019-2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2021_Kang et al_Plants.pdf]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">13</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/a74a261a-0896-4f8e-bba1-1e8feb7133b0">
+                        cAMP Biosensors Based on Genetically Encoded Fluorescent/Luminescent Proteins          </a>
+                            
+    <span>
+          <a href="/collection/7c542db2-9d50-40c3-afbb-c4aad1a084fa" class="collection-title">PEG 하이드로겔 기반 바이오센서 개발 연구(2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2021_Kim et al_Biosensors.pdf]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">14</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/f104fb71-81f0-45d5-9e13-6e4560856cd3">
+                        Naked-Eye Detection of Fluoride Ions Using a Reaction-based Colorimetric Probe          </a>
+                            
+    <span>
+          <a href="/collection/7c542db2-9d50-40c3-afbb-c4aad1a084fa" class="collection-title">PEG 하이드로겔 기반 바이오센서 개발 연구(2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2020_Choi et al_BKCS.pdf]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">15</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/ae9bde27-24c2-446c-a0da-5c20ae8e72fe">
+                        Silibinin Regulates Tumor Progression and Tumorsphere Formation by Suppressing PD-L1 Expression in Non-Small Cell Lung Cancer (NSCLC) Cells          </a>
+                            
+    <span>
+          <a href="/collection/7c542db2-9d50-40c3-afbb-c4aad1a084fa" class="collection-title">PEG 하이드로겔 기반 바이오센서 개발 연구(2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2021_Rugamba et al_Cells.pdf]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">16</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/c559da8e-c21d-4a1f-ae8c-287bfa2f38ee">
+                        Different interactions of gaseous CH3I with both Ag nanoparticles and Ag+ ions included in mercaptopropyl functionalized silica gels          </a>
+                            
+    <span>
+          <a href="/collection/72566407-33cc-4dc3-b4e0-af76990f623a" class="collection-title">수소 조건에서 다양한 아이오딘들의 변화에 관한 분광학적 연구(2019-2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2021_Hong &amp; Im_Colloid and Interface Science Communucations.PDF]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">17</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/88a89ec7-a051-4c71-8f18-c1c955b2f9c6">
+                        제주 지역 수산물 중  K-40과 Cs-137 방사능 농도와 연간 유효선량 분석          </a>
+                            
+    <span>
+          <a href="/collection/72566407-33cc-4dc3-b4e0-af76990f623a" class="collection-title">수소 조건에서 다양한 아이오딘들의 변화에 관한 분광학적 연구(2019-2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2020_Han et al_Applied Science of Nuclear Energy.PDF]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">18</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/3b94b521-dfce-4931-9934-a19a217de179">
+                        Investigation of the iodine species on platinum catalyst used as hydrogen oxidation          </a>
+                            
+    <span>
+          <a href="/collection/72566407-33cc-4dc3-b4e0-af76990f623a" class="collection-title">수소 조건에서 다양한 아이오딘들의 변화에 관한 분광학적 연구(2019-2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2020_Im et al_Energy Research.pdf]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">19</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/8c327bc5-9bac-4a41-bb4a-fb41d2f1967b">
+                        Propagation of Cryogenic Thermal Fractures from Unconfined PMMA Boreholes          </a>
+                            
+    <span>
+          <a href="/collection/3d4275e1-4323-488e-a875-926f17bf84ac" class="collection-title">도심 지반 침하 및 싱크홀 예방을 위한 지하 토사 손실 모니터링(2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2021_Cha et al_Energies.pdf]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+        <li>
+  <em class="list_num">20</em>
+  <div class="list_tbox">
+    <a class="title" href="/data/2936bf03-f147-4005-8b4b-5490446548b4">
+                        Schrödinger 𝑝(⋅)–Laplace equations in ℝ𝑁 involving indefinite weights and critical growth          </a>
+                            
+    <span>
+          <a href="/collection/a95c7ebf-45bd-477f-acf8-ae9187a507a9" class="collection-title">토에프리츠 작용소의 아정규성에 관한 연구 및 응용(2021)</a>;
+          2022-03-17          <span class="badge schema">논문</span>
+                      <span class="badge" title="[2021_Ho et al_J Math Phys.pdf]">
+              PDF            </span>
+                  </span>
+  </div>
+</li>
+      </ul>
+</div>
+                          <div class="paginate_complex">
+      <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;page=0" class="direction first_prev">처음</a>
+            <a href="#" class="direction prev">이전</a>
+            
+                  <strong>1</strong>
+                        <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;page=1">2</a>
+                        <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;page=2">3</a>
+                  
+       
+      <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;page=1" class="direction next">다음</a>
+            <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;page=2" class="direction last_next">끝</a>
+    </div>
+        </div><!-- -result_contents : e -->
+      <div class="result_right_box">
+            <div class="aside_box">
+    <h5>컬렉션</h5>
+    <div id="aside_years" class="owl-carousel owl-theme aside_slide">
+      <div class="item">
+        <ul class="aside_list">
+                    <li>
+                                                                <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;filter=collection:f75445ee%5C-a8a8%5C-47c5%5C-a8ea%5C-4b8390debf50" class="facet-link">      서로 다른 행렬 공간상의 퍼지 항 계수와 그 보존자 연구(2019-2020)  </a> 
+              <span class="round_line">5</span>
+                      </li>
+                    <li>
+                                                                <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;filter=collection:22f041d9%5C-efd4%5C-4952%5C-9287%5C-4782b9755c6e" class="facet-link">      기후변화에 따른 제주도 주변해역 어업자원 영향분석(2020-2021)  </a> 
+              <span class="round_line">4</span>
+                      </li>
+                    <li>
+                                                                <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;filter=collection:72566407%5C-33cc%5C-4dc3%5C-b4e0%5C-af76990f623a" class="facet-link">      수소 조건에서 다양한 아이오딘들의 변화에 관한 분광학적 연구(2019-2021)  </a> 
+              <span class="round_line">4</span>
+                      </li>
+                    <li>
+                                                                <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;filter=collection:161ee125%5C-270e%5C-437b%5C-a19f%5C-1eaa99625746" class="facet-link">      제주 남방큰돌고래 주요 발견지역에서 수중음향 모니터링(2019-2021)  </a> 
+              <span class="round_line">3</span>
+                      </li>
+                    <li>
+                                                                <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;filter=collection:1db76bd1%5C-5c0f%5C-4d38%5C-9383%5C-9617b67ec278" class="facet-link">      [이병걸] 이삭플랫폼에 적합한 제주도 생태환경연구자료구축을 위한 위성영상 DB구축 및 활용방안에 대한 연구(2022)  </a> 
+              <span class="round_line">3</span>
+                      </li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+    <div class="aside_box">
+    <h5>제출자</h5>
+    <div id="aside_years" class="owl-carousel owl-theme aside_slide">
+      <div class="item">
+        <ul class="aside_list">
+                    <li>
+                                                                <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;sort=date,asc&amp;filter=file.extension:pdf" class="facet-link"><i class="mgr_5 glyphicon glyphicon-remove red"></i>      관리자  </a> 
+              <span class="round_line">53</span>
+                      </li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+    <div class="aside_box">
+    <h5>승인년도</h5>
+    <div id="aside_years" class="owl-carousel owl-theme aside_slide">
+      <div class="item">
+        <ul class="aside_list">
+                    <li>
+                                                                <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;filter=browse.year:2022" class="facet-link">      2022  </a> 
+              <span class="round_line">42</span>
+                      </li>
+                    <li>
+                                                                <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;filter=browse.year:2023" class="facet-link">      2023  </a> 
+              <span class="round_line">11</span>
+                      </li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+    <div class="aside_box">
+    <h5>파일확장자</h5>
+    <div id="aside_years" class="owl-carousel owl-theme aside_slide">
+      <div class="item">
+        <ul class="aside_list">
+                    <li>
+                                                                <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc" class="facet-link"><i class="mgr_5 glyphicon glyphicon-remove red"></i>      pdf  </a> 
+              <span class="round_line">53</span>
+                      </li>
+                    <li>
+                                                                <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;filter=file.extension:mp4" class="facet-link">      mp4  </a> 
+              <span class="round_line">5</span>
+                      </li>
+                    <li>
+                                                                <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;filter=file.extension:jpg" class="facet-link">      jpg  </a> 
+              <span class="round_line">4</span>
+                      </li>
+                    <li>
+                                                                <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;filter=file.extension:png" class="facet-link">      png  </a> 
+              <span class="round_line">1</span>
+                      </li>
+                    <li>
+                                                                <a href="?year=2022&amp;submitter=2136cb42-0490-4039-ad0b-17cd3e001150&amp;filter=submitter:d48f0ee8%5C-c370%5C-46e7%5C-9e87%5C-c0fcbc427ad6&amp;sort=date,asc&amp;filter=file.extension:pdf&amp;filter=file.extension:xls" class="facet-link">      xls  </a> 
+              <span class="round_line">1</span>
+                      </li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+   
+      </div> <!-- result_right_box -->
+    </div>
+  </div>
+
+
+    <div class="footer_wrap">
+      <div class="footer_inner">
+        <ul class="footer_ul">
+          <li><a href="/privacypolicy">개인정보처리방침</a></li>
+          <li><a href="/info/notice">공지사항</a></li>
+          <li><a href="/manual">매뉴얼</a></li>
+        </ul>
+        <div class="footer_address mgb_10">
+          <div class="footer_text mgb_10"> <p>기초과학연구소 제주특별자치도 제주시 제주대학로 102(아라일동 1, 제주대학교) (제주대학교 공동실험실습관 기초과학연구소 110호)</p> <span>064-754-8308</span>sumikim@jejunu.ac.kr, myyang@jejunu.ac.kr </div>        </div>
+        <div class="footer_c">Copyright © RIBS. All Rights Reserved.</div>
+      </div>
+    </div>
+    
+  </div> <!-- sb-site -->
+
+
+  <!-- 오른쪽 메뉴 -->
+  <div class="sb-slidebar sb-right">
+    <div class="right_nav_box">
+   
+      <div class="mobile_user_box">
+        <div class="mn_user_name">
+          <span><a href="/auth/me/" class="default"></a></span>
+                    <a href="/auth/login"><span>로그인</span></a>
+                  </div>
+        <div class="mn_user_info user_info_data">
+                    
+                  </div>
+      </div>
+   
+      <div id="accordion_mobile" class="left_nav_inner">
+        
+<h3><em>소개</em></h3>
+<div class="left_sub_menu">
+  <ul>
+        <li><a href="/about/esac">ESAC</a></li>        <li><a href="/about/manual">이용안내</a></li>        <li><a href="/info/notice">공지사항</a></li>      </ul>
+</div>
+<h3><em>연구데이터</em></h3>
+<div class="left_sub_menu">
+  <ul>
+        <li><a href="/search/">검색</a></li>        <li><a href="/datamap/">데이터맵</a></li>        <li><a href="/data/draft/">제출</a></li>      </ul>
+</div>
+<h3><em>DMP</em></h3>
+<div class="left_sub_menu">
+  <ul>
+        <li><a href="/about/dmp">DMP소개</a></li>        <li><a href="/dmp/">검색</a></li>        <li><a href="/dmp/draft/">작성</a></li>      </ul>
+</div>
+<h3><em>MyData</em></h3>
+<div class="left_sub_menu">
+  <ul>
+        <li><a href="/my/data/">내 데이터</a></li>        <li><a href="/my/dmp/">내 DMP</a></li>        <li><a href="/my/collection/">내 컬렉션</a></li>        <li><a href="/my/storage/">내 저장소</a></li>        <li><a href="/my/share/requests/">활용 신청</a></li>        <li><a href="/my/api/requests/">OpenAPI 신청</a></li>      </ul>
+</div>
+<h3><em>검토/승인</em></h3>
+<div class="left_sub_menu">
+  <ul>
+        <li><a href="/data/workflow/">연구데이터 승인</a></li>        <li><a href="/data/review/">연구데이터 검토</a></li>        <li><a href="/dmp/workflow/">DMP 승인</a></li>        <li><a href="/dmp/review/">DMP 검토</a></li>      </ul>
+</div>
+      </div>
+    </div>
+    <div class="rn_box">
+      <ul>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </div>
+  </div>
+
+<script type="text/javascript" src="/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/vue.js"></script>
+<script type="text/javascript" src="/js/jquery.scroll.pack.js"></script>
+<script type="text/javascript" src="/lib/waitMe/waitMe.min.js"></script>
+<script type="text/javascript" src="/lib/toastr/toastr.min.js"></script>
+<script type="text/javascript" src="/lib/dayjs-1.11.5/dayjs.min.js"></script>
+<!-- Slidebars -->
+<script type="text/javascript" src="/js/slidebars.js"></script>
+<script type="text/javascript" src="/js/wicket.js"></script>
+<script type="text/javascript" src="/js/common.js?v=20230202"></script>
+<script type="text/javascript" src="/js/site.js"></script>
+
+<script>
+(function($) {
+  $(document).ready(function() {
+    $.slidebars();
+    var $f = $(".mobile_s_inner");
+    $(".sub_search_bt").click(function(e){
+      e.preventDefault();
+      $f.toggleClass("search_active");
+      if ($f.hasClass('search_active')) {
+        // focus
+        setTimeout(function() {
+          $f.find('input:text').focus();
+        }, 10);
+      }
+    });
+  });
+})(jQuery);
+</script>
+
+
+</body>
+</html>
